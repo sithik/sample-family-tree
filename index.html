@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>Family Tree</title>
+    <link rel="stylesheet" href="js/family_tree/Treant/Treant.css">
+    <link rel="stylesheet" href="js/family_tree/family.css">
+    <link rel="stylesheet" href="js/family_tree/Treant/perfect-scrollbar/perfect-scrollbar.css">
+</head>
+<body>
+    <div class="chart" id="family-container"></div>
+    <script src="js/family_tree/Treant/vendor/raphael.js"></script>
+    <script src="js/family_tree/Treant/Treant.js"></script>
+    <script src="js/family_tree/Treant/vendor/jquery.min.js"></script>
+    <script src="js/family_tree/Treant/vendor/jquery.easing.js"></script>
+    <script>
+        var chart_config = {
+            chart: {
+                container: "#family-container",
+                rootOrientation: "SOUTH",
+                animateOnInit: true,
+                animation: {
+                    nodeAnimation: "easeOutBounce",
+                    nodeSpeed: 700,
+                    connectorsAnimation: "bounce",
+                    connectorsSpeed: 700
+                }
+            },
+            nodeStructure: {
+                image: "img/me.png",
+                text: {
+                    name: "My Name",
+                    title: "Test Title",
+                    profile_link: ""
+                },
+                children: [
+                    {
+                        image: "img/mom.png",
+                        text: {
+                            name: "My Mom",
+                            title: "Test Title",
+                            profile_link: ""
+                        },
+                        children: [
+                            {
+                                image: "img/mom-grandma.png",
+                                text: {
+                                    name: "My Mom > Grandma",
+                                    title: "Test Title",
+                                    profile_link: ""
+                                }
+                            },
+                            {
+                                image: "img/mom-grandpa.png",
+                                text: {
+                                    name: "My Mom > Grandpa",
+                                    title: "Test Title",
+                                    profile_link: ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        image: "img/dad.png",
+                        text: {
+                            name: "My Dad",
+                            title: "Test Title",
+                            profile_link: ""
+                        },
+                        children: [
+                            {
+                                image: "img/dad-grandpa.png",
+                                text: {
+                                    name: "My Dad > Grandpa",
+                                    title: "Test Title",
+                                    profile_link: ""
+                                }
+                            },
+                            {
+                                image: "img/dad-grandma.png",
+                                text: {
+                                    name: "My Dad > Grandma",
+                                    title: "Test Title",
+                                    profile_link: ""
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        };
+        tree = new Treant( chart_config );
+    </script>
+</body>
+</html>
